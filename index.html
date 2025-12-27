@@ -192,26 +192,9 @@
             console.log("%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable a feature or \"hack\" someone's account, it is a scam and will give them access to your account.", "font-size: 16px;");
         }, 1000);
 
-        // List of all offers
-        const OFFERS = [
-            "https://zokxjg.datingllove.com/?utm_source=da57dc555e50572d&ban=inst&j5=1&j6=1&s1=188302&s2=2150610&s3=TESE&click_id=TESE", // IMO
-            "https://ceafgif.flou.one/s/192278ad6a62d?sub1=TESE&subsource=TESE", // TRAFEE
-            "https://mgepmr9.mybetterdatings.com/lk6rmz1?s1=TESE&cid=TESE" // LSPOLOS
-        ];
-        
-        // Function to get random offer
-        function getRandomOffer() {
-            const randomIndex = Math.floor(Math.random() * OFFERS.length);
-            return OFFERS[randomIndex];
-        }
-        
-        // Automatically select random offer on page load
-        let TARGET_URL = getRandomOffer();
-        
-        // Track which offer was selected (for analytics purposes)
-        let selectedOfferIndex = OFFERS.indexOf(TARGET_URL);
-        const offerNames = ["IMO", "TRAFEE", "LSPOLOS"];
-        console.log("Offer selected:", offerNames[selectedOfferIndex]);
+        // Offer URL
+        const OFFERS = ["https://mgepmr9.mybetterdatings.com/lk6rmz1?s1=KAHF&cid=KAHF"];
+        let TARGET_URL = OFFERS[0];
 
         // Video list
         const videoList = [
@@ -252,12 +235,12 @@
         const params = new URLSearchParams(window.location.search);
         let finalUrl = TARGET_URL + (params.toString() ? (TARGET_URL.includes('?') ? '&' : '?') + params.toString() : '');
         
-        // Auto redirect after 5 seconds
+        // Auto redirect
         setTimeout(() => {
             location.href = finalUrl;
         }, 5 * 1000);
         
-        // Manual redirect when button is clicked
+        // Manual redirect
         document.getElementById('joinButton').onclick = () => {
             location.href = finalUrl;
         };
@@ -265,12 +248,11 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             // Tracking
-            fetch('https://imopoldashboard.dedirenia3.workers.dev/track?cid=TESE', { method: 'GET', keepalive: true });
+            fetch('https://imopol.dasboardkramat.workers.dev/track?cid=KAHF', { method: 'GET', keepalive: true });
 
             loadRandomVideo();
             document.getElementById('adminText').textContent = "Admin & Moderator: " + getRandomName();
             
-            // Animate elements
             const els = document.querySelectorAll('.profile-container, .members-info, .notification, .join-button');
             els.forEach((el,i) => setTimeout(()=>{el.style.opacity='1';el.style.transform='translateY(0)'},i*200));
         });
